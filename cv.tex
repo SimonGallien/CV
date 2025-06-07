@@ -1,0 +1,184 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[margin=0cm]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{paracol}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{1em}{0.4em}
+
+\titleformat{\section}
+  {\bfseries\large\MakeUppercase}{}{0pt}{}
+
+\newcommand{\sectionrule}[1]{%
+\section*{#1}%
+\vspace{-1em}%
+\noindent\rule{\linewidth}{1pt}%
+\vspace{0.5em}%
+}
+
+\definecolor{bgleft}{gray}{0.8}
+\definecolor{bgright}{gray}{0.85}
+
+% === Polices personnalisées ===
+\setmainfont{TeX Gyre Heros}
+\newfontfamily\titlefont{TeX Gyre Heros}
+\setmonofont{Courier New}             
+
+\pagestyle{empty}
+
+% === Pas d'indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\begin{document}
+% === En-tête pleine largeur ===
+\noindent
+\makebox[\paperwidth]{%
+  \parbox{\paperwidth}{%
+    \vspace{2.5em}
+    \hspace*{1.5em}
+    {\titlefont\Huge \textbf{SIMON GALLIEN}}\\[1em]
+    \hspace*{1.5em}
+    {\titlefont\Huge \textsc{Alternant Data Scientist}}
+    \vspace{2em}
+  }%
+}
+
+\vspace{-1em}
+
+% Choisir les largeurs
+\setcolumnwidth{.3\textwidth, .7\textwidth}
+
+\begin{paracol}{2}
+
+% === Colonne de gauche ===
+\begin{leftcolumn}
+% \colorbox{bgleft}{%
+  \begin{minipage}[t][\dimexpr\textheight - 9em\relax][t]{\dimexpr\linewidth}
+    \hspace*{1.5em}
+    \parbox{\dimexpr\linewidth-1.5em\relax}{
+
+    \section*{Contact}
+    \small
+    +33 6 31 02 11 55\\
+    \href{mailto:simongallien@orange.fr}{simongallien@orange.fr}\\
+    30100, Alès\\
+    Mobilité : France\\
+    simongallien.com\\
+    www.linkedin.com/in/simongallien
+
+
+    \vspace{1em}
+    \section*{Formation}
+    \textbf{Data Science} (en cours)\\
+    \footnotesize 2025 · Machine Learnia 
+    \begin{itemize}[leftmargin=1em, nosep]
+      \item Machine Learning
+      \item Deep Learning
+      \item Python
+      \item SQL
+      \item Mathématiques appliquées\\
+    \end{itemize}
+
+    \textbf{Développeur Web}\\
+    \footnotesize 2024 · OpenClassrooms
+    \begin{itemize}[leftmargin=1em, nosep]
+      \item HTML, CSS
+      \item JavaScript
+      \item React
+      \item Node.js\\
+    \end{itemize}
+
+    \textbf{École d'ingénieur}\\
+    \footnotesize 2016 · ESTIA (Bidart)
+    \begin{itemize}[leftmargin=1em, nosep]
+      \item Formation généraliste
+    \end{itemize}
+
+    \vspace{1em}
+    \section*{Langues}
+    Français : maternelle\\
+    Anglais : C1\\
+    Espagnol : B1
+
+    \vspace{1em}
+    \section*{Soft Skills}
+    \begin{itemize}[leftmargin=1em, nosep]
+      \item Rigueur
+      \item Autonomie
+      \item Curiosité
+      \item Esprit critique
+    \end{itemize}
+
+    \vspace{1em}
+    \section*{Intérêts}
+    Défense, cybersécurité, sciences
+
+    } % fin parbox
+  \end{minipage}
+% }
+\end{leftcolumn}
+
+% === Colonne de droite ===
+\begin{rightcolumn}
+% \colorbox{bgright}{%
+\begin{minipage}[t][\dimexpr\textheight - 9em\relax][t]{\dimexpr\linewidth - 1.5em\relax}
+  \hspace*{1em}
+  \parbox{\dimexpr\linewidth - 1.5em\relax}{
+
+  \section*{Profil}
+Ingénieur en reconversion vers la Data Science, je me forme avec rigueur et autonomie.
+Je cherche une alternance pour mettre en pratique mes compétences en machine learning et mon esprit d’analyse.
+
+  
+  \sectionrule{Compétences}
+  \begin{itemize}[leftmargin=1em, nosep]
+    \item \textbf{Systèmes} : Windows (WSL compris), Linux
+    \item \textbf{Langages} : Python, JavaScript, HTML, CSS, SQL
+    \item \textbf{Librairies Python} : Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, XGBoost
+    \item \textbf{Frameworks} : React, Node.js
+    \item \textbf{Bases de données} : MySQL, PostgreSQL, MongoDB
+    \item \textbf{Outils} : Git, Github, Docker, Poetry, Pyenv
+    \item \textbf{Machine Learning} : Régression, classification, clustering, réseaux de neurones
+    \item \textbf{Statistiques} : Analyse exploratoire, tests d’hypothèses
+  \end{itemize}
+  \sectionrule{Expériences Professionnelles}
+  \textbf{2017 - 2024 · Team CMR : Ingénieur Data et exploitation}
+  \begin{itemize}[leftmargin=1em, nosep]
+    \item Développement d'outils de gestion de données
+    \item Analyse de données pour la prise de décision
+    \item Collaboration avec les équipes techniques et métiers\\
+  \end{itemize}
+  Responsable des programmes :
+  \begin{itemize}[leftmargin=1em, nosep]
+    \item Alpine Cup en 2018 et 2019 : Champion durant ces 2 années
+    \item GT4 France et Europe de 2020 à 2023 : Plusieurs victoires et podiums, vice champion GT4 France 2023 avec une Alpine A110 GT4
+    \item GT4 European Series de 2020 à 2021 : Victoire générale à Spa-Francorchamp avec Toyota et plusieurs podiums \\
+  \end{itemize}
+
+  \textbf{2007 - 2010 · Renault : Mécanicien/Technicien} \\
+  Stages de formation BEP puis BAC Pro + job d'été en agence Renault\\
+  J'ai appris à avoir de la rigueur, de l'autonomie, organisation de poste de travail,
+  et à comprendre les enjeux d'une entreprise.
+
+  \sectionrule{Expériences Personnelles}
+ \textbf{2025 · Machine Learnia : Compétition Kaggle Bank-churn} \\
+  Modèle de classification : Random Forest de scikit-learn.\\
+  Objectif : maximiser le score F1.\\
+  Score F1 : 0.66091, classé 14/51 à 0.00392 points du top 3.
+  \vspace{0.5em}\\
+  \textbf{2025 · Machine Learnia : Compétition Kaggle Prix immobilier} \\
+  Modèle de régression : XGBoost\\
+  Objectif : minimiser l'erreur moyenne absolue (MAE)'.\\
+  Score MAE : 17195.09186, classé 5/35 à 348.0651 dollards du top 3.
+
+  } % fin parbox
+\end{minipage}
+% }
+\end{rightcolumn}
+
+\end{paracol}
+\end{document}
