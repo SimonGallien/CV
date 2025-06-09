@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{paracol}
+\usepackage{multicol}
 \usepackage[hidelinks]{hyperref}
 \usepackage{titlesec}
 \titlespacing*{\section}{0pt}{1em}{0.4em}
@@ -35,22 +36,39 @@
 
 \begin{document}
 % === En-tête pleine largeur ===
-\noindent
-\makebox[\paperwidth]{%
-  \parbox{\paperwidth}{%
-    \vspace{2.5em}
-    \hspace*{1.5em}
-    {\titlefont\Huge \textbf{SIMON GALLIEN}}\\[1em]
-    \hspace*{1.5em}
-    {\titlefont\Huge \textsc{Alternant Data Scientist}}
-    \vspace{2em}
-  }%
-}
+% \noindent
+% \makebox[\paperwidth]{%
+%   \parbox{\paperwidth}{%
+%     \vspace{2.5em}
+%     \hspace*{1.5em}
+%     {\titlefont\Huge \textbf{SIMON GALLIEN}}\\[1em]
+%     \hspace*{1.5em}
+%     {\titlefont\Huge \textsc{Alternant Data Scientist}}
+%     \vspace{2em}
+%   }%
+% }
 
-\vspace{-1em}
+\vspace*{0.5em}
+\noindent
+\hspace*{1.5em}
+\begin{minipage}[t]{0.02\linewidth}
+  \colorbox{black}{\rule{2pt}{2em}}\\[-1pt]
+  \colorbox{black}{\rule{2pt}{2em}}\\[1pt]
+\end{minipage}
+\hspace{1em}
+\begin{minipage}[t]{\dimexpr\linewidth-3em\relax}
+  {\titlefont\Huge \textbf{SIMON GALLIEN}}\\[1em]
+  {\titlefont\Large \textsc{Alternant Data Scientist}}
+\end{minipage}
+% \vspace{2em}
+
+
+
+
+\vspace{-0.5em}
 
 % Choisir les largeurs
-\setcolumnwidth{.3\textwidth, .7\textwidth}
+\setcolumnwidth{.25\textwidth, .75\textwidth}
 
 \begin{paracol}{2}
 
@@ -67,8 +85,8 @@
     \href{mailto:simongallien@orange.fr}{simongallien@orange.fr}\\
     30100, Alès\\
     Mobilité : France\\
-    simongallien.com\\
-    www.linkedin.com/in/simongallien
+    % simongallien.com\\
+    linkedin.com/in/simongallien
 
 
     \vspace{1em}
@@ -113,9 +131,9 @@
       \item Esprit critique
     \end{itemize}
 
-    \vspace{1em}
-    \section*{Intérêts}
-    Défense, cybersécurité, sciences
+    % \vspace{1em}
+    % \section*{Intérêts}
+    % Défense, cybersécurité, sciences
 
     } % fin parbox
   \end{minipage}
@@ -130,52 +148,149 @@
   \parbox{\dimexpr\linewidth - 1.5em\relax}{
 
   \section*{Profil}
-Ingénieur en reconversion vers la Data Science, je me forme avec rigueur et autonomie.
-Je cherche une alternance pour mettre en pratique mes compétences en machine learning et mon esprit d’analyse.
+  Ingénieur en reconversion vers la Data Science, je me forme avec rigueur et autonomie.
+  Je cherche une alternance pour mettre en pratique mes compétences en machine learning et mon esprit d’analyse.
 
-  
-  \sectionrule{Compétences}
-  \begin{itemize}[leftmargin=1em, nosep]
-    \item \textbf{Systèmes} : Windows (WSL compris), Linux
-    \item \textbf{Langages} : Python, JavaScript, HTML, CSS, SQL
-    \item \textbf{Librairies Python} : Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, XGBoost
-    \item \textbf{Frameworks} : React, Node.js
-    \item \textbf{Bases de données} : MySQL, PostgreSQL, MongoDB
-    \item \textbf{Outils} : Git, Github, Docker, Poetry, Pyenv
-    \item \textbf{Machine Learning} : Régression, classification, clustering, réseaux de neurones
-    \item \textbf{Statistiques} : Analyse exploratoire, tests d’hypothèses
-  \end{itemize}
-  \sectionrule{Expériences Professionnelles}
-  \textbf{2017 - 2024 · Team CMR : Ingénieur Data et exploitation}
-  \begin{itemize}[leftmargin=1em, nosep]
-    \item Développement d'outils de gestion de données
-    \item Analyse de données pour la prise de décision
-    \item Collaboration avec les équipes techniques et métiers\\
-  \end{itemize}
-  Responsable des programmes :
-  \begin{itemize}[leftmargin=1em, nosep]
-    \item Alpine Cup en 2018 et 2019 : Champion durant ces 2 années
-    \item GT4 France et Europe de 2020 à 2023 : Plusieurs victoires et podiums, vice champion GT4 France 2023 avec une Alpine A110 GT4
-    \item GT4 European Series de 2020 à 2021 : Victoire générale à Spa-Francorchamp avec Toyota et plusieurs podiums \\
-  \end{itemize}
+  \vspace{0.5em}
+  % \sectionrule{Compétences}
+  % \begin{itemize}[leftmargin=1em, nosep]
+  %   \item \textbf{Systèmes} : Windows (WSL compris), Linux
+  %   \item \textbf{Langages} : Python, JavaScript, HTML, CSS, SQL
+  %   \item \textbf{Librairies Python} : Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, XGBoost
+  %   \item \textbf{Frameworks} : React, Node.js
+  %   \item \textbf{Bases de données} : MySQL, PostgreSQL, MongoDB
+  %   \item \textbf{Outils} : Git, Github, Docker, Poetry, Pyenv
+  %   \item \textbf{Machine Learning} : Régression, classification, clustering, réseaux de neurones
+  %   \item \textbf{Statistiques} : Analyse exploratoire, tests d’hypothèses
+  % \end{itemize}
 
-  \textbf{2007 - 2010 · Renault : Mécanicien/Technicien} \\
-  Stages de formation BEP puis BAC Pro + job d'été en agence Renault\\
-  J'ai appris à avoir de la rigueur, de l'autonomie, organisation de poste de travail,
-  et à comprendre les enjeux d'une entreprise.
+\sectionrule{Compétences}
+\vspace{-3em}
+\setlength{\columnsep}{2em}
+\begin{multicols}{2}
 
-  \sectionrule{Expériences Personnelles}
- \textbf{2025 · Machine Learnia : Compétition Kaggle Bank-churn} \\
-  Modèle de classification : Random Forest de scikit-learn.\\
-  Objectif : maximiser le score F1.\\
-  Score F1 : 0.66091, classé 14/51 à 0.00392 points du top 3.
-  \vspace{0.5em}\\
-  \textbf{2025 · Machine Learnia : Compétition Kaggle Prix immobilier} \\
-  Modèle de régression : XGBoost\\
-  Objectif : minimiser l'erreur moyenne absolue (MAE)'.\\
-  Score MAE : 17195.09186, classé 5/35 à 348.0651 dollards du top 3.
+\textbf{Systèmes}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item Windows (WSL), Linux
+\end{itemize}
+\vspace{1em}
+\textbf{Data Science}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item \textbf{Python :} Pandas, NumPy, Scikit-learn, XGBoost,
+   Matplotlib, Seaborn
 
-  } % fin parbox
+\end{itemize}
+
+\vspace{1em}
+\textbf{Statistiques}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item Analyse exploratoire
+  \item Tests d’hypothèses
+\end{itemize}
+
+\vspace{1em}
+\textbf{Web}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item HTML, CSS, JavaScript
+  \item React, Node.js
+\end{itemize}
+
+\vspace{1em}
+\textbf{Bases de données}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item MySQL
+  \item PostgreSQL
+  \item MongoDB
+\end{itemize}
+
+\vspace{1em}
+\textbf{Outils}
+\begin{itemize}[leftmargin=1.2em, nosep]
+  \item Git, GitHub, Docker, Poetry, Pyenv
+\end{itemize}
+
+\end{multicols}
+\vspace{0em}
+
+  % \sectionrule{Expériences Professionnelles}
+  % \textbf{2017 - 2024 · Team CMR : Ingénieur Data et exploitation}
+  % \begin{itemize}[leftmargin=1em, nosep]
+  %   \item Développement d'outils de gestion de données
+  %   \item Analyse de données pour la prise de décision
+  %   \item Collaboration avec les équipes techniques et métiers\\
+  % \end{itemize}
+  % Responsable des programmes :
+  % \begin{itemize}[leftmargin=1em, nosep]
+  %   \item Alpine Cup en 2018 et 2019 : Champion durant ces 2 années
+  %   \item GT4 France et Europe de 2020 à 2023 : Plusieurs victoires et podiums, vice champion GT4 France 2023 avec une Alpine A110 GT4
+  %   \item GT4 European Series de 2020 à 2021 : Victoire générale à Spa-Francorchamp avec Toyota et plusieurs podiums \\
+  % \end{itemize}
+
+  % \textbf{2007 - 2010 · Renault : Mécanicien/Technicien} \\
+  % Stages de formation BEP puis BAC Pro + job d'été en agence Renault\\
+  % J'ai appris à avoir de la rigueur, de l'autonomie, organisation de poste de travail,
+  % et à comprendre les enjeux d'une entreprise.
+
+\sectionrule{Expériences Professionnelles}
+
+\textbf{Ingénieur Data et exploitation – Team CMR} \hfill {\color{blue}2017–2024}  
+\begin{itemize}[leftmargin=1em, nosep]
+  \vspace{0.2em}
+  \item Mis en place des \textbf{outils de collecte et de traitement de données} pour le suivi des performances.
+  \vspace{0.2em}
+  \item Réalisé des \textbf{analyses de données} pour la \textbf{prise de décision technique et stratégique}.
+  \vspace{0.2em}
+  \item Collaboré avec les \textbf{équipes techniques et les pilotes} dans un environnement exigeant.
+  \vspace{0.2em}
+  \item Responsable de programmes sur plusieurs championnats (\textbf{Alpine Cup}, \textbf{GT4 France \& Europe}) avec une contribution directe à \textbf{plus 30 podiums} en 6 saisons.
+\end{itemize}
+
+
+
+
+
+
+  % \vspace{1em}
+  % \textbf{Mécanicien/Technicien – Renault · 2007–2010}
+  % \begin{itemize}[leftmargin=1em, nosep]
+  %   \item Stages BEP/BAC Pro et job d’été en agence Renault.
+  %   \item Rigueur, autonomie et organisation du poste de travail.
+  %   \item Compréhension des enjeux techniques et humains d’un atelier automobile.
+  % \end{itemize}
+
+
+%   \sectionrule{Expériences Personnelles}
+%  \textbf{2025 · Machine Learnia : Compétition Kaggle Bank-churn} \\
+%   Modèle de classification : Random Forest de scikit-learn.\\
+%   Objectif : maximiser le score F1.\\
+%   Score F1 : 0.66091, classé 14ème à 0.00392 points du top 3.
+%   \vspace{0.5em}\\
+%   \textbf{2025 · Machine Learnia : Compétition Kaggle Prix immobilier} \\
+%   Modèle de régression : XGBoost\\
+%   Objectif : minimiser l'erreur moyenne absolue (MAE).\\
+%   Score MAE : 17195.09186, classé 5ème à 348.0651 dollards du top 3.
+\vspace{0.5em}
+\sectionrule{Expériences Personnelles}
+
+\textbf{Compétition Kaggle – Machine Learnia} \hfill {\color{blue}2025}  
+\begin{itemize}[leftmargin=1em, nosep]
+  \vspace{0.2em}
+  \item Modèle de classification avec \textbf{Random Forest} (Scikit-learn) pour prédire les départs clients.
+  \item Objectif : maximiser le \textbf{F1-score}. 
+  \item Résultat : \textbf{F1 = 0.66091}, classé \textbf{14ème} à \textbf{0.00392 pts} du top 3.
+\end{itemize}
+
+\vspace{0.7em}
+
+\textbf{Compétition Kaggle – Machine Learnia} \hfill {\color{blue}2025}  
+\begin{itemize}[leftmargin=1em, nosep]
+  \vspace{0.2em}
+  \item Modèle de régression avec \textbf{XGBoost} pour estimer le prix de vente d’un bien immobilier.
+  \item Objectif : minimiser la \textbf{MAE}. 
+  \item Résultat : \textbf{MAE = 17195.09}, classé \textbf{5ème} à \textbf{348 \$} du top 3.
+\end{itemize}
+
+} % fin parbox
 \end{minipage}
 % }
 \end{rightcolumn}
