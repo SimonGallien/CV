@@ -9,6 +9,12 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{titlesec}
 \usepackage{hyperxmp}
+\usepackage[most]{tcolorbox}
+\usepackage{parskip} % Pour une belle séparation
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem} % Remplace \underline par \uline avec options
+
 \hypersetup{
   pdftitle={CV - Simon Gallien},
   pdfauthor={Simon Gallien},
@@ -21,6 +27,36 @@
   pdfapart=3,
   pdfaconformance=B
 }
+
+\usepackage{tikz}
+\newcommand{\tagskill}[1]{%
+  \tikz[baseline]{
+    \node[inner sep=0pt, outer sep=0pt, anchor=base] (X) {\strut #1};
+    \draw[black!50, line width=0.2pt] 
+      ([yshift=-0.3ex]X.south west) -- ([yshift=-0.3ex]X.south east);
+  }%
+}
+
+
+% bulle langues
+\usepackage{tikz}
+
+\newcommand{\languagerow}[3]{
+  \noindent
+  \textbf{#1}
+  \hspace{0.5em}
+  \begin{tikzpicture}[baseline={(0,-0.12)}]
+    \foreach \x in {1,...,5} {
+      \ifnum\x>#3
+        \filldraw[fill=gray!30, draw=gray!30] (\x*0.5,0) circle (0.45em);
+      \else
+        \filldraw[fill=bleufonce, draw=bleufonce] (\x*0.5,0) circle (0.45em);
+      \fi
+    }
+  \end{tikzpicture}\\[0.2em]
+  {\small #2} \\[0.6em]
+}
+
 
 \definecolor{bleufonce}{RGB}{0, 51, 102} % à mettre dans le préambule
 
@@ -76,7 +112,7 @@
 \vspace{-0.5em}
 
 % Choisir les largeurs
-\setcolumnwidth{.25\textwidth, .75\textwidth}
+\setcolumnwidth{.3\textwidth, .7\textwidth}
 
 \begin{paracol}{2}
 
@@ -99,51 +135,38 @@
 
     \vspace{1em}
     \section*{Compétences} 
-      \textbf{Systèmes} :
-      \begin{itemize}[leftmargin=1em, nosep]
-      \item Windows (WSL), 
-      \item Linux
-      \end{itemize}
-      \vspace{0.5em}
-      \textbf{Python} :
-      \begin{itemize}[leftmargin=1em, nosep]
-      \item Pandas, 
-      \item NumPy,
-      \item Scikit-learn,
-      \item XGBoost,
-      \item Matplotlib,
-      \item Seaborn
-      \end{itemize}
-      \vspace{0.5em}
-      \textbf{Statistiques} :
-      \begin{itemize}[leftmargin=1em, nosep]
-      \item Analyse exploratoire,
-      \item Tests d’hypothèses
-      \end{itemize}
-      \vspace{0.5em}
-      \textbf{Bases de données} :
-      \begin{itemize}[leftmargin=1em, nosep]
-      \item MySQL,
-      \item PostgreSQL,
-      \item MongoDB
-      \end{itemize}
-      \vspace{0.5em}
-      \textbf{Outils} :
-      \begin{itemize}[leftmargin=1em, nosep]
-      \item Git,
-      \item GitHub,
-      \item Docker,
-      \item Poetry,
-      \item Pyenv
-      \end{itemize}    
+    % Dans la section compétences :
+    \noindent
+    \textbf{Langages \& bibliothèques :}\\[0.5em]
+    \tagskill{Python} \hspace{0.5em} \tagskill{Pandas} \hspace{0.5em} \tagskill{Scikit-learn} \\[0.5em]
+    \tagskill{NumPy} \hspace{0.5em} \tagskill{Seaborn} \hspace{0.5em} \tagskill{Matplotlib}
+   
+    \vspace{1.5em}
+    \noindent
+    \textbf{Systèmes \& outils :}\\[0.5em]
+    \tagskill{Windows (WSL)} \hspace{0.5em} \tagskill{Linux}\\[0.5em]
+    \tagskill{Git} \hspace{0.5em} \tagskill{GitHub} \hspace{0.5em} \tagskill{Docker} \\[0.5em]
+    \tagskill{Poetry} \hspace{0.5em} \tagskill{Pyenv}
 
-    \vspace{1em}
+    \vspace{1.5em}
+    \noindent
+    \textbf{Bases de données :}\\[0.5em]
+    \tagskill{MySQL} \hspace{0.5em} \tagskill{MongoDB}
+
+    \vspace{1.5em}
+    \noindent
+    \textbf{Statistiques :}\\[0.5em]
+    \tagskill{Analyse exploratoire} \\[0.5em]
+    \tagskill{Tests d’hypothèses} \\  
+
+    \vspace{0.5em}
     \section*{Langues}
-    Français : maternelle\\
-    Anglais : C1\\
-    Espagnol : B1
+    \languagerow{Français \hspace{0.5em}}{Langue maternelle}{5}
+    \languagerow{Anglais \hspace{1em}}{Compétent (C1)}{3}
+    \languagerow{Espagnol \hspace{0.1em}}{Intermédiaire (B1)}{2}
 
-    \vspace{1em}
+
+    \vspace{-0.7em}
     \section*{Soft Skills}
     \begin{itemize}[leftmargin=1em, nosep]
       \item Rigueur
@@ -172,18 +195,7 @@
   Ingénieur en reconversion vers la Data Science, je me forme avec rigueur et autonomie.
   Je cherche une alternance pour mettre en pratique mes compétences en machine learning ainsi que mon esprit d’analyse.
 
-  \vspace{0.5em}
-  % \sectionrule{Compétences}
-  % \begin{itemize}[leftmargin=1em, nosep]
-  %   \item \textbf{Systèmes} : Windows (WSL compris), Linux
-  %   \item \textbf{Langages} : Python, JavaScript, HTML, CSS, SQL
-  %   \item \textbf{Librairies Python} : Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, XGBoost
-  %   \item \textbf{Frameworks} : React, Node.js
-  %   \item \textbf{Bases de données} : MySQL, PostgreSQL, MongoDB
-  %   \item \textbf{Outils} : Git, Github, Docker, Poetry, Pyenv
-  %   \item \textbf{Machine Learning} : Régression, classification, clustering, réseaux de neurones
-  %   \item \textbf{Statistiques} : Analyse exploratoire, tests d’hypothèses
-  % \end{itemize}
+  \vspace{0.7em}
 
 \sectionrule{Formation}
 % \vspace{-3em}
@@ -205,6 +217,7 @@
   \item Développement de compétences analytiques et techniques solides
 \end{itemize}
 
+\vspace{0.7em}
 \sectionrule{Expériences Professionnelles}
 
 \textbf{Ingénieur Data et exploitation – Team CMR} \hfill {\color{blue}2017–2024}  
@@ -219,8 +232,8 @@
   \item Responsable de programmes sur plusieurs championnats (\textbf{Alpine Cup}, \textbf{GT4 France \& Europe}) avec une contribution directe à \textbf{plus de 30 podiums} en 6 saisons.
 \end{itemize}
 
-\vspace{0.5em}
-\sectionrule{Expériences Personnelles}
+\vspace{0.7em}
+\sectionrule{Projets de Machine Learning}
 
 \textbf{Compétition Kaggle – Machine Learnia ($\approx$ 500 élèves)} \hfill {\color{blue}2025}  
 \begin{itemize}[leftmargin=1em, nosep]
