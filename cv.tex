@@ -8,25 +8,46 @@
 \usepackage{multicol}
 \usepackage[hidelinks]{hyperref}
 \usepackage{titlesec}
+\usepackage{hyperxmp}
+\hypersetup{
+  pdftitle={CV - Simon Gallien},
+  pdfauthor={Simon Gallien},
+  pdfsubject={Curriculum Vitae},
+  pdfkeywords={Data Science, Python, Machine Learning, CV},
+  pdfproducer={XeLaTeX},
+  pdfcreator={XeLaTeX},
+  pdfa=true,
+  colorlinks=false,
+  pdfapart=3,
+  pdfaconformance=B
+}
+
+\definecolor{bleufonce}{RGB}{0, 51, 102} % à mettre dans le préambule
+
 \titlespacing*{\section}{0pt}{1em}{0.4em}
 
 \titleformat{\section}
-  {\bfseries\large\MakeUppercase}{}{0pt}{}
+  % {\bfseries\large\MakeUppercase}{}{0pt}{}
+  {\color{bleufonce}\bfseries\large\MakeUppercase}
+  {}{0pt}{}
 
 \newcommand{\sectionrule}[1]{%
-\section*{#1}%
-\vspace{-1em}%
-\noindent\rule{\linewidth}{1pt}%
-\vspace{0.5em}%
+  \section*{#1}%
+  \vspace{-1em}%
+  {\color{bleufonce}\noindent\rule{\linewidth}{1pt}}%
+  \vspace{0.5em}%
 }
 
-\definecolor{bgleft}{gray}{0.8}
-\definecolor{bgright}{gray}{0.85}
+
+% \definecolor{bgleft}{gray}{0.8}
+% \definecolor{bgright}{gray}{0.8}
 
 % === Polices personnalisées ===
 \setmainfont{TeX Gyre Heros}
 \newfontfamily\titlefont{TeX Gyre Heros}
-\setmonofont{Courier New}             
+\setmonofont{Courier New} 
+
+
 
 \pagestyle{empty}
 
@@ -36,34 +57,21 @@
 
 \begin{document}
 % === En-tête pleine largeur ===
-% \noindent
-% \makebox[\paperwidth]{%
-%   \parbox{\paperwidth}{%
-%     \vspace{2.5em}
-%     \hspace*{1.5em}
-%     {\titlefont\Huge \textbf{SIMON GALLIEN}}\\[1em]
-%     \hspace*{1.5em}
-%     {\titlefont\Huge \textsc{Alternant Data Scientist}}
-%     \vspace{2em}
-%   }%
-% }
 
-\vspace*{0.5em}
+\vspace*{1em}
 \noindent
-\hspace*{1.5em}
+\hspace*{2.5em}
 \begin{minipage}[t]{0.02\linewidth}
-  \colorbox{black}{\rule{2pt}{2em}}\\[-1pt]
-  \colorbox{black}{\rule{2pt}{2em}}\\[1pt]
+  \colorbox{bleufonce}{\color{bleufonce}\rule{2pt}{2em}}\\[-1pt]
+  \colorbox{bleufonce}{\color{bleufonce}\rule{2pt}{2em}}\\[1pt]
 \end{minipage}
 \hspace{1em}
 \begin{minipage}[t]{\dimexpr\linewidth-3em\relax}
-  {\titlefont\Huge \textbf{SIMON GALLIEN}}\\[1em]
-  {\titlefont\Large \textsc{Alternant Data Scientist}}
+  {\titlefont\Huge \textcolor{bleufonce}{\textbf{SIMON GALLIEN}}}\\[1em]
+  {\titlefont\Large {Alternant Data Scientist}}
+
 \end{minipage}
 % \vspace{2em}
-
-
-
 
 \vspace{-0.5em}
 
@@ -76,7 +84,7 @@
 \begin{leftcolumn}
 % \colorbox{bgleft}{%
   \begin{minipage}[t][\dimexpr\textheight - 9em\relax][t]{\dimexpr\linewidth}
-    \hspace*{1.5em}
+    \hspace*{2.5em}
     \parbox{\dimexpr\linewidth-1.5em\relax}{
 
     \section*{Contact}
@@ -87,34 +95,47 @@
     Mobilité : France\\
     % simongallien.com\\
     linkedin.com/in/simongallien
-
+    github.com/SimonGallien
 
     \vspace{1em}
-    \section*{Formation}
-    \textbf{Data Science} (en cours)\\
-    \footnotesize 2025 · Machine Learnia 
-    \begin{itemize}[leftmargin=1em, nosep]
-      \item Machine Learning
-      \item Deep Learning
-      \item Python
-      \item SQL
-      \item Mathématiques appliquées\\
-    \end{itemize}
-
-    \textbf{Développeur Web}\\
-    \footnotesize 2024 · OpenClassrooms
-    \begin{itemize}[leftmargin=1em, nosep]
-      \item HTML, CSS
-      \item JavaScript
-      \item React
-      \item Node.js\\
-    \end{itemize}
-
-    \textbf{École d'ingénieur}\\
-    \footnotesize 2016 · ESTIA (Bidart)
-    \begin{itemize}[leftmargin=1em, nosep]
-      \item Formation généraliste
-    \end{itemize}
+    \section*{Compétences} 
+      \textbf{Systèmes} :
+      \begin{itemize}[leftmargin=1em, nosep]
+      \item Windows (WSL), 
+      \item Linux
+      \end{itemize}
+      \vspace{0.5em}
+      \textbf{Python} :
+      \begin{itemize}[leftmargin=1em, nosep]
+      \item Pandas, 
+      \item NumPy,
+      \item Scikit-learn,
+      \item XGBoost,
+      \item Matplotlib,
+      \item Seaborn
+      \end{itemize}
+      \vspace{0.5em}
+      \textbf{Statistiques} :
+      \begin{itemize}[leftmargin=1em, nosep]
+      \item Analyse exploratoire,
+      \item Tests d’hypothèses
+      \end{itemize}
+      \vspace{0.5em}
+      \textbf{Bases de données} :
+      \begin{itemize}[leftmargin=1em, nosep]
+      \item MySQL,
+      \item PostgreSQL,
+      \item MongoDB
+      \end{itemize}
+      \vspace{0.5em}
+      \textbf{Outils} :
+      \begin{itemize}[leftmargin=1em, nosep]
+      \item Git,
+      \item GitHub,
+      \item Docker,
+      \item Poetry,
+      \item Pyenv
+      \end{itemize}    
 
     \vspace{1em}
     \section*{Langues}
@@ -144,12 +165,12 @@
 \begin{rightcolumn}
 % \colorbox{bgright}{%
 \begin{minipage}[t][\dimexpr\textheight - 9em\relax][t]{\dimexpr\linewidth - 1.5em\relax}
-  \hspace*{1em}
+  \hspace*{1.5em}
   \parbox{\dimexpr\linewidth - 1.5em\relax}{
 
   \section*{Profil}
   Ingénieur en reconversion vers la Data Science, je me forme avec rigueur et autonomie.
-  Je cherche une alternance pour mettre en pratique mes compétences en machine learning et mon esprit d’analyse.
+  Je cherche une alternance pour mettre en pratique mes compétences en machine learning ainsi que mon esprit d’analyse.
 
   \vspace{0.5em}
   % \sectionrule{Compétences}
@@ -164,72 +185,25 @@
   %   \item \textbf{Statistiques} : Analyse exploratoire, tests d’hypothèses
   % \end{itemize}
 
-\sectionrule{Compétences}
-\vspace{-3em}
-\setlength{\columnsep}{2em}
-\begin{multicols}{2}
-
-\textbf{Systèmes}
-\begin{itemize}[leftmargin=1.2em, nosep]
-  \item Windows (WSL), Linux
+\sectionrule{Formation}
+% \vspace{-3em}
+\textbf{Data Science} – Machine Learnia \hfill {\color{blue}2025 (en cours)}
+\begin{itemize}[leftmargin=1em, nosep]
+  \vspace{0.2em}
+  \item Formation intensive en Data Science : Python, Machine Learning, Deep Learning, SQL, Mathématiques appliquées
+  \vspace{0.2em}
+  \item Projets pratiques : Kaggle, traitement de données réelles, modélisation avancée
 \end{itemize}
-\vspace{1em}
-\textbf{Data Science}
-\begin{itemize}[leftmargin=1.2em, nosep]
-  \item \textbf{Python :} Pandas, NumPy, Scikit-learn, XGBoost,
-   Matplotlib, Seaborn
+% \vspace{0.5em}
 
+\vspace{0.5em}
+\textbf{Diplôme d'ingénieur} – ESTIA \hfill {\color{blue}2013–2016}
+\begin{itemize}[leftmargin=1em, nosep]
+  \vspace{0.2em}
+  \item Formation généraliste d’ingénieur : mathématiques, physique, informatique, gestion de projet
+  \vspace{0.2em}
+  \item Développement de compétences analytiques et techniques solides
 \end{itemize}
-
-\vspace{1em}
-\textbf{Statistiques}
-\begin{itemize}[leftmargin=1.2em, nosep]
-  \item Analyse exploratoire
-  \item Tests d’hypothèses
-\end{itemize}
-
-\vspace{1em}
-\textbf{Web}
-\begin{itemize}[leftmargin=1.2em, nosep]
-  \item HTML, CSS, JavaScript
-  \item React, Node.js
-\end{itemize}
-
-\vspace{1em}
-\textbf{Bases de données}
-\begin{itemize}[leftmargin=1.2em, nosep]
-  \item MySQL
-  \item PostgreSQL
-  \item MongoDB
-\end{itemize}
-
-\vspace{1em}
-\textbf{Outils}
-\begin{itemize}[leftmargin=1.2em, nosep]
-  \item Git, GitHub, Docker, Poetry, Pyenv
-\end{itemize}
-
-\end{multicols}
-\vspace{0em}
-
-  % \sectionrule{Expériences Professionnelles}
-  % \textbf{2017 - 2024 · Team CMR : Ingénieur Data et exploitation}
-  % \begin{itemize}[leftmargin=1em, nosep]
-  %   \item Développement d'outils de gestion de données
-  %   \item Analyse de données pour la prise de décision
-  %   \item Collaboration avec les équipes techniques et métiers\\
-  % \end{itemize}
-  % Responsable des programmes :
-  % \begin{itemize}[leftmargin=1em, nosep]
-  %   \item Alpine Cup en 2018 et 2019 : Champion durant ces 2 années
-  %   \item GT4 France et Europe de 2020 à 2023 : Plusieurs victoires et podiums, vice champion GT4 France 2023 avec une Alpine A110 GT4
-  %   \item GT4 European Series de 2020 à 2021 : Victoire générale à Spa-Francorchamp avec Toyota et plusieurs podiums \\
-  % \end{itemize}
-
-  % \textbf{2007 - 2010 · Renault : Mécanicien/Technicien} \\
-  % Stages de formation BEP puis BAC Pro + job d'été en agence Renault\\
-  % J'ai appris à avoir de la rigueur, de l'autonomie, organisation de poste de travail,
-  % et à comprendre les enjeux d'une entreprise.
 
 \sectionrule{Expériences Professionnelles}
 
@@ -242,37 +216,13 @@
   \vspace{0.2em}
   \item Collaboré avec les \textbf{équipes techniques et les pilotes} dans un environnement exigeant.
   \vspace{0.2em}
-  \item Responsable de programmes sur plusieurs championnats (\textbf{Alpine Cup}, \textbf{GT4 France \& Europe}) avec une contribution directe à \textbf{plus 30 podiums} en 6 saisons.
+  \item Responsable de programmes sur plusieurs championnats (\textbf{Alpine Cup}, \textbf{GT4 France \& Europe}) avec une contribution directe à \textbf{plus de 30 podiums} en 6 saisons.
 \end{itemize}
 
-
-
-
-
-
-  % \vspace{1em}
-  % \textbf{Mécanicien/Technicien – Renault · 2007–2010}
-  % \begin{itemize}[leftmargin=1em, nosep]
-  %   \item Stages BEP/BAC Pro et job d’été en agence Renault.
-  %   \item Rigueur, autonomie et organisation du poste de travail.
-  %   \item Compréhension des enjeux techniques et humains d’un atelier automobile.
-  % \end{itemize}
-
-
-%   \sectionrule{Expériences Personnelles}
-%  \textbf{2025 · Machine Learnia : Compétition Kaggle Bank-churn} \\
-%   Modèle de classification : Random Forest de scikit-learn.\\
-%   Objectif : maximiser le score F1.\\
-%   Score F1 : 0.66091, classé 14ème à 0.00392 points du top 3.
-%   \vspace{0.5em}\\
-%   \textbf{2025 · Machine Learnia : Compétition Kaggle Prix immobilier} \\
-%   Modèle de régression : XGBoost\\
-%   Objectif : minimiser l'erreur moyenne absolue (MAE).\\
-%   Score MAE : 17195.09186, classé 5ème à 348.0651 dollards du top 3.
 \vspace{0.5em}
 \sectionrule{Expériences Personnelles}
 
-\textbf{Compétition Kaggle – Machine Learnia} \hfill {\color{blue}2025}  
+\textbf{Compétition Kaggle – Machine Learnia ($\approx$ 500 élèves)} \hfill {\color{blue}2025}  
 \begin{itemize}[leftmargin=1em, nosep]
   \vspace{0.2em}
   \item Modèle de classification avec \textbf{Random Forest} (Scikit-learn) pour prédire les départs clients.
@@ -282,7 +232,7 @@
 
 \vspace{0.7em}
 
-\textbf{Compétition Kaggle – Machine Learnia} \hfill {\color{blue}2025}  
+\textbf{Compétition Kaggle – Machine Learnia ($\approx$ 500 élèves)} \hfill {\color{blue}2025}  
 \begin{itemize}[leftmargin=1em, nosep]
   \vspace{0.2em}
   \item Modèle de régression avec \textbf{XGBoost} pour estimer le prix de vente d’un bien immobilier.
